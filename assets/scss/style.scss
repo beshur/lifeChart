@@ -1,0 +1,135 @@
+// style
+
+@mixin fontsMain() {
+	font-family: 'Cuprum', sans-serif;
+}
+@mixin mainGradient() {
+	background: #fff6ed;
+	background: -moz-linear-gradient(top,  #fff6ed 0%, #ffd6b7 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff6ed), color-stop(100%,#ffd6b7));
+	background: -webkit-linear-gradient(top,  #fff6ed 0%,#ffd6b7 100%);
+	background: -o-linear-gradient(top,  #fff6ed 0%,#ffd6b7 100%);
+	background: -ms-linear-gradient(top,  #fff6ed 0%,#ffd6b7 100%);
+	background: linear-gradient(to bottom,  #fff6ed 0%,#ffd6b7 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff6ed', endColorstr='#ffd6b7',GradientType=0 );
+
+}
+
+$colorNormal: #666;
+$colorAlready: #999;
+$colorWin: green;
+
+html, body {
+	min-height: 100%;
+	height: 100%;
+}
+body {
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+a {
+	color: rgb(80, 124, 192);
+
+	&:visited {
+		color: #c05094;
+	}
+}
+
+.hide {
+	display: none;
+}
+
+.vishid {
+	visibility: hidden;
+}
+
+#container {
+	min-height: 100%;
+	@include mainGradient();
+	@include fontsMain();
+	
+}
+
+#content {
+	min-height: 100%;
+
+	font-size: 18px;
+}
+
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+	@include fontsMain();	
+}
+
+.b_form_basic {
+
+	position: relative;
+	text-align: center;
+}
+
+.b_chart {
+	padding: 100px 0;
+
+
+	.legend {
+		font-size: 12px;
+		line-height: 1;
+
+		&-item {
+			margin-right: 10px;
+			i {
+				
+				display: inline-block;
+				width: 12px;
+				height: 12px;
+
+		
+				vertical-align: bottom;
+				background: #fff;
+
+			}
+			&.normal i {
+				background: $colorNormal;
+			}
+			&.already i {
+				background: $colorAlready;
+			}
+			&.win i {
+				background: $colorWin;
+			}
+		}
+	}
+}
+
+.b_week_box {
+	padding: 30px 0;
+
+	font-size: 0;
+
+	&__el {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		margin: 1px;
+
+		background: $colorNormal;
+
+		&[data-already="true"] {
+			background: $colorAlready;
+		}
+		&[data-win="true"] {
+			background: $colorWin;
+		}
+	}
+}
+
+.b_copy {
+	padding: 20px 0;
+	font-size: 12px;
+	text-align: right;
+}
+
+.b_share {
+	float: left;
+}
