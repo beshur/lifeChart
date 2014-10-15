@@ -69,10 +69,20 @@ html, button, input, select, textarea,
   background: #fff;
 }
 .b_chart .legend-item.normal i {
-  background: #666666;
+  background: #666;
 }
 .b_chart .legend-item.already i {
-  background: #999999;
+  background: #d56161;
+  position: relative;
+}
+.b_chart .legend-item.already i:before {
+  content: "X";
+  position: absolute;
+  top: 1px;
+  line-height: 1;
+  left: 3px;
+  font-size: 10px;
+  color: #fff;
 }
 .b_chart .legend-item.win i {
   background: green;
@@ -84,20 +94,29 @@ html, button, input, select, textarea,
 }
 .b_week_box__el {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   margin: 1px;
-  background: #666666;
+  background: #666;
 }
 .b_week_box__el[data-already="true"] {
-  background: #999999;
+  background: #d56161;
+  position: relative;
+}
+.b_week_box__el[data-already="true"]:before {
+  content: "X";
+  position: absolute;
+  top: 1px;
+  line-height: 1;
+  left: 3px;
+  font-size: 10px;
+  color: #fff;
 }
 .b_week_box__el[data-win="true"] {
   background: green;
 }
 
 .b_copy {
-  padding: 20px 0;
   font-size: 12px;
   text-align: right;
 }

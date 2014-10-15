@@ -15,9 +15,27 @@
 
 }
 
-$colorNormal: #666;
-$colorAlready: #999;
-$colorWin: green;
+@mixin colorNormal() {
+	background: #666;
+}
+@mixin colorAlready() {
+	background: #d56161;
+	position: relative;
+
+	&:before {
+		content: "X";
+		position: absolute;
+		top: 1px;
+		line-height: 1;
+		left: 3px;
+		font-size: 10px;
+		color: #fff;
+	}
+
+}
+@mixin colorWin() {
+	background: green;
+}
 
 html, body {
 	min-height: 100%;
@@ -90,13 +108,13 @@ html, button, input, select, textarea,
 
 			}
 			&.normal i {
-				background: $colorNormal;
+				@include colorNormal();
 			}
 			&.already i {
-				background: $colorAlready;
+				@include colorAlready();
 			}
 			&.win i {
-				background: $colorWin;
+				@include colorWin();
 			}
 		}
 	}
@@ -109,23 +127,24 @@ html, button, input, select, textarea,
 
 	&__el {
 		display: inline-block;
-		width: 20px;
-		height: 20px;
+		width: 10px;
+		height: 10px;
 		margin: 1px;
 
-		background: $colorNormal;
+		@include colorNormal();
 
 		&[data-already="true"] {
-			background: $colorAlready;
+			@include colorAlready();
 		}
 		&[data-win="true"] {
-			background: $colorWin;
+			@include colorWin();
 		}
+
 	}
 }
 
 .b_copy {
-	padding: 20px 0;
+	// padding: 20px 0;
 	font-size: 12px;
 	text-align: right;
 }
