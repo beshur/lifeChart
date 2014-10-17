@@ -5,7 +5,7 @@ $(function() {
 	$(window).resize();
 	var tester = window.setTimeout(function() {
 		console.log('yo');
-		appState.set({age: 76, country: "Ukraine", stage: 1});
+		// appState.set({age: 76, country: "Ukraine", stage: 1});
 	}, 1500)
 })
 $(window).resize(function() {
