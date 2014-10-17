@@ -32,6 +32,12 @@
 		color: #fff;
 	}
 
+	@media screen and (max-width: 968px) {
+		&:before {
+			display: none;
+		}
+	}
+
 }
 @mixin colorWin() {
 	background: green;
@@ -144,6 +150,7 @@ html, button, input, select, textarea,
 }
 
 .b_copy {
+	padding-top: 8px;
 	// padding: 20px 0;
 	font-size: 12px;
 	text-align: right;
